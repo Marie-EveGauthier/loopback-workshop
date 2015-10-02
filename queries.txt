@@ -1,0 +1,31 @@
+** List all entries ordered by first name
+
+{"order":"firstName ASC"}
+
+
+** List the first 10 entries ordered by last name
+
+{"order":"lastName ASC", "limit" : 10}
+
+
+** List the second "page" of 10 entries ordered by last name
+
+{"limit": 10, "skip": 10, "order" : "lastName ASC"}
+
+** List all entries where the first name is "John"
+
+{"where": {"firstName": "John"} }
+
+** List all entries where the first name contains "John"
+
+{ "where": {"firstName": {"regexp": "John"} } }
+
+
+I did the first ones from entry model. For the two last one, I did it from the addressBook model.
+**List all address books including their entries
+
+{"include": {"entries"}
+
+**List all address books including their entries, as well as all the addresses, emails and phone numbers associated
+
+{"include": {"entries": ["addresses", "emails", "phones"]}}
